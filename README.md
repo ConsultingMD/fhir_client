@@ -228,3 +228,16 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
+
+## How to Create a Release
+
+Releases happen in CircleCI when a tag is pushed to the repository.
+
+To create a release, you will need to do the following:
+
+1. Change the version in `lib/gr_send_with_us/version.rb` to the new version and create a PR with the change.
+1. Once the PR is merged, switch to the master branch and `git pull`.
+1. `git tag <version from version.rb>`
+1. `git push origin --tags`
+
+CircleCI will see the tag push, build, and release a new version of the library.
